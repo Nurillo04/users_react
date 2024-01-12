@@ -1,0 +1,84 @@
+.users {
+  padding: 20px;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.user {
+  flex-basis: 25%;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 15px 1px rgba(0, 0, 0, 0.45);
+  height: 280px;
+  line-height: 80%;
+  background-color: #fff;
+}
+
+.title {
+  text-align: center;
+
+  font-weight: 700;
+  font-size: 70px;
+  color: #fff;
+}
+body {
+  background: rgb(16, 239, 184);
+  background: linear-gradient(
+    90deg,
+    rgba(16, 239, 184, 1) 0%,
+    rgba(70, 144, 207, 1) 33%,
+    rgba(118, 56, 194, 1) 100%
+  );
+}
+
+.title2 {
+  font-family: sans-serif;
+  font-weight: 600;
+  color: black;
+}
+.title3 {
+  font-family: sans-serif;
+  font-weight: 500;
+  color: rgb(124, 114, 114);
+}
+.title4 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #595c5f;
+}
+
+.text,
+.email {
+  font-size: 18px;
+  font-weight: 400;
+  color: #575151;
+}
+.id {
+  text-align: center;
+}
+
+.post {
+  width: 1000px;
+  height: 150px;
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  margin-left: 120px;
+}
+
+.btn {
+  border: 0px;
+  padding: 12px;
+  border-radius: 10px;
+  margin-left: 10px;
+  background-color: #0dcaf0;
+  color: #fff;
+}
+.btn2 {
+  color: white;
+  background-color: #0dcaf0;
+}
