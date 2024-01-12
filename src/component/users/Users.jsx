@@ -18,7 +18,9 @@ const Users = () => {
 
   const getUserPosts = async (id) => {
     try {
-      const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+      const res = await fetch(
+        `https://jsonplaceholder.typicode.com/posts?userId=${id}`
+      );
       const data = await res.json();
       setPosts(data);
     } catch (error) {
@@ -52,7 +54,7 @@ const Users = () => {
       <div className="posts ">
         {posts.map((post) => (
           <div key={post.id} className="post">
-            {/* <h2 className="id">{post.id}</h2> */}
+            <h2 className="id">{post.id}</h2>
             <h3 className="title2">{post.title} </h3>
             <p className="text"> {post.body}</p>
             <button className="btn btn2" onClick={() => getUserPosts(post.id)}>
