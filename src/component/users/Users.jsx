@@ -8,6 +8,7 @@ const Users = () => {
   const [todos, setTodos] = useState([]);
   const [albums, setAlbums] = useState([]);
   const [photos, setPhotos] = useState([]);
+  const [comments, setComments] = useState([]);
 
   const fetchUsers = async () => {
     try {
@@ -61,6 +62,16 @@ const Users = () => {
     }
   };
 
+  const getUserComments = async () => {
+    try {
+      const res = await fetch("https://jsonplaceholder.typicode.com/comments");
+      const data = await res.json();
+      setComments(data);
+    } catch (error) {
+      console.log(Error);
+    }
+  };
+
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -96,9 +107,27 @@ const Users = () => {
             <h2 className="id">{post.id}</h2>
             <h3 className="title2">{post.title} </h3>
             <p className="text"> {post.body}</p>
-            <button className="btn btn2" onClick={() => getUserPosts(post.id)}>
+            <button
+              className="btn btn2"
+              onClick={() => getUserComments(post.id)}
+            >
               Comments{" "}
             </button>
+          </div>
+        ))}
+      </div>
+
+      <div className="comments">
+        {comments.map((comment) => (
+          <div key={comment.id} className="comment">
+            <h3 className="commetId">{comment.id}</h3>
+            <p className="comment_email"> Email: {comment.email}</p>
+            <hr className="comment_hr" />
+            <h3 className="comment_title">{comment.name} </h3>
+            <p className="comment_text"> {comment.body}</p>
+            {/* <button className="btn btn2" onClick={() => getUserPosts(post.id)}>
+              Comments{" "}
+            </button> */}
           </div>
         ))}
       </div>

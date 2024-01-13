@@ -74,13 +74,13 @@ body {
   border: 0px;
   padding: 12px;
   border-radius: 10px;
-  margin-left: 10px;
+  margin-left: 30px;
   background-color: #0dcaf0;
   color: #fff;
 }
 .btn2 {
   color: white;
-  background-color: #0dcaf0;
+  background-color: #0d49f0;
 }
 .btn3 {
   width: 200px;
@@ -154,4 +154,39 @@ body {
 .img {
   width: 220px;
   height: 220px;
+}
+
+.comment {
+  margin-top: 50px;
+  padding: 20px;
+  padding-top: 5px;
+  margin-left: 120px;
+  width: 1000px;
+  background-color: #198754;
+  color: #ffff;
+}
+.commetId {
+  color: white;
+  text-align: center;
+}
+.comment_email {
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+}
+.comment_hr {
+  // width: 800px;
+  // height: 1px;
+  // background-color: #198754;
+  border: 1px solid #005b30;
+}
+.comment_title {
+  font-family: sans-serif;
+  font-weight: 500;
+  color: white;
+}
+.comment_text {
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
 }
