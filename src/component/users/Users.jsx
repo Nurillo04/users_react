@@ -7,6 +7,7 @@ const Users = () => {
   const [posts, setPosts] = useState([]);
   const [todos, setTodos] = useState([]);
   const [albums, setAlbums] = useState([]);
+  const [photos, setPhotos] = useState([]);
 
   const fetchUsers = async () => {
     try {
@@ -45,6 +46,16 @@ const Users = () => {
       const res = await fetch("https://jsonplaceholder.typicode.com/albums");
       const data = await res.json();
       setAlbums(data);
+    } catch (error) {
+      console.log(Error);
+    }
+  };
+
+  const getUserPhotos = async () => {
+    try {
+      const res = await fetch("https://jsonplaceholder.typicode.com/photos");
+      const data = await res.json();
+      setPhotos(data);
     } catch (error) {
       console.log(Error);
     }
@@ -111,6 +122,19 @@ const Users = () => {
             >
               Photos{" "}
             </button>
+          </div>
+        ))}
+      </div>
+
+      <div className="photos ">
+        {photos.map((photo) => (
+          <div key={photo.id} className="photo">
+            <img
+              className="img"
+              src=" https://picsum.photos/200/300"
+              alt="Rasm"
+            />
+            <h3 className="title2">{photo.title} </h3>
           </div>
         ))}
       </div>
