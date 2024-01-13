@@ -6,6 +6,7 @@ const Users = () => {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
   const [todos, setTodos] = useState([]);
+  const [albums, setAlbums] = useState([]);
 
   const fetchUsers = async () => {
     try {
@@ -39,6 +40,16 @@ const Users = () => {
     }
   };
 
+  const getUsersAlbums = async () => {
+    try {
+      const res = await fetch("https://jsonplaceholder.typicode.com/albums");
+      const data = await res.json();
+      setAlbums(data);
+    } catch (error) {
+      console.log(Error);
+    }
+  };
+
   useEffect(() => {
     fetchUsers();
   }, []);
@@ -61,6 +72,9 @@ const Users = () => {
             <button className="btn" onClick={() => getUserTodos(user.id)}>
               Todos{" "}
             </button>
+            <button className="btn" onClick={() => getUsersAlbums(user.id)}>
+              Album{" "}
+            </button>
           </div>
         ))}
       </div>
@@ -81,12 +95,22 @@ const Users = () => {
       <div className="todos">
         {todos.map((todo) => (
           <div key={todo.id} className="todo">
-            {/* <h2 className="id">{todo.id}</h2> */}
             <h3 className="title2">{todo.title} </h3>
             <p className="text"> {todo.completed ? "✅" : "❌"}</p>
-            {/* <button className="btn btn2" onClick={() => getUserPosts(post.id)}>
-              Comments{" "}
-            </button> */}
+          </div>
+        ))}
+      </div>
+
+      <div className="albums ">
+        {albums.map((album) => (
+          <div key={album.id} className="album">
+            <h3 className="title2">{album.title} </h3>
+            <button
+              className="btn btn2 btn3"
+              onClick={() => getUserPhotos(album.id)}
+            >
+              Photos{" "}
+            </button>
           </div>
         ))}
       </div>

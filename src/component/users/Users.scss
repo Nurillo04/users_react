@@ -82,6 +82,9 @@ body {
   color: white;
   background-color: #0dcaf0;
 }
+.btn3 {
+  width: 200px;
+}
 
 .todo {
   display: flex;
@@ -98,4 +101,29 @@ body {
   color: #212529;
   margin-top: 15px;
   margin-left: 120px;
+}
+
+.album {
+  margin-top: 20px;
+  background-color: #fff;
+  width: 250px;
+  height: 150px;
+  color: black;
+  padding: 20px;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+.albums {
+  padding: 20px;
+  padding-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
