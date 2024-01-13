@@ -42,9 +42,11 @@ const Users = () => {
     }
   };
 
-  const getUsersAlbums = async () => {
+  const getUsersAlbums = async (id) => {
     try {
-      const res = await fetch("https://jsonplaceholder.typicode.com/albums");
+      const res = await fetch(
+        `https://jsonplaceholder.typicode.com/albums?postId=${id}`
+      );
       const data = await res.json();
       setAlbums(data);
     } catch (error) {
