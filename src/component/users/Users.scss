@@ -82,3 +82,20 @@ body {
   color: white;
   background-color: #0dcaf0;
 }
+
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1000px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 15px 1px rgba(0, 0, 0, 0.45);
+  height: 20px;
+  line-height: 80%;
+  background-color: #fff;
+  font-size: 11px;
+  color: #212529;
+  margin-top: 15px;
+  margin-left: 120px;
+}

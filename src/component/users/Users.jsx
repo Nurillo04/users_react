@@ -5,6 +5,7 @@ import "./Users.scss";
 const Users = () => {
   const [users, setUsers] = useState([]);
   const [posts, setPosts] = useState([]);
+  const [todos, setTodos] = useState([]);
 
   const fetchUsers = async () => {
     try {
@@ -23,6 +24,16 @@ const Users = () => {
       );
       const data = await res.json();
       setPosts(data);
+    } catch (error) {
+      console.log(Error);
+    }
+  };
+
+  const getUserTodos = async () => {
+    try {
+      const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+      const data = await res.json();
+      setTodos(data);
     } catch (error) {
       console.log(Error);
     }
@@ -47,6 +58,9 @@ const Users = () => {
             <button className="btn" onClick={() => getUserPosts(user.id)}>
               Posts{" "}
             </button>
+            <button className="btn" onClick={() => getUserTodos(user.id)}>
+              Todos{" "}
+            </button>
           </div>
         ))}
       </div>
@@ -60,12 +74,19 @@ const Users = () => {
             <button className="btn btn2" onClick={() => getUserPosts(post.id)}>
               Comments{" "}
             </button>
+          </div>
+        ))}
+      </div>
 
-            {/* 
-            <h2> ${post.title}</h2>
-        <p>I ${post.body}</p>
-        <a class='btn'  href="/pages/comments.html"><button class"btn">Comments</button></a>
-      </div> */}
+      <div className="todos">
+        {todos.map((todo) => (
+          <div key={todo.id} className="todo">
+            {/* <h2 className="id">{todo.id}</h2> */}
+            <h3 className="title2">{todo.title} </h3>
+            <p className="text"> {todo.completed ? "✅" : "❌"}</p>
+            {/* <button className="btn btn2" onClick={() => getUserPosts(post.id)}>
+              Comments{" "}
+            </button> */}
           </div>
         ))}
       </div>
